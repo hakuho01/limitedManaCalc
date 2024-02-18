@@ -2,6 +2,7 @@ body{
   background: #fff;
   margin:0;
   position: relative;
+  font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
 }
 h1{
   background: #000;
