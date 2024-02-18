@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-  <head></head>
+  <head>
+    <title>リミテで土地枚数計算するやつ</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
   <body>
     <h1>リミテで基本土地枚数計算するやつ</h1>
-    <h2>使い方</h2>
-    <p>(1)色とマナ総量の合致したところにシンボル数を入力してください(例：1WWの《栄光の頌歌》をデッキに入れる場合は、3マナ出るときにWWが欲しいので、Wの列の3の行のところに「2」を入力します)。同じマナ総量・シンボル数のカードがある場合は最大値を入力してください。<br>
-      (2)特種地形から出る色を全て入力してください(例：赤と青が出る《蒸気孔》を1枚ピックしていたら、UとRの行にそれぞれ1を入力してください)。<br>
-      (3)デッキに入れたい基本土地の枚数を入力してください。<br>
-      (4)全ての入力が終わったら、「計算する」を押してください。</p>
-    <table>
+    <div class="wrapper">
+      <div class="inputwrapper">
+        <div>
+    <h2>呪文のマナシンボル</h2>
+    <table class="spell">
       <thead>
         <tr>
-          <th>色</th><th>W</th><th>U</th><th>B</th><th>R</th><th>G</th>
+          <th>色</th>
+          <th><img src="img/mana_w.png"></th>
+          <th><img src="img/mana_u.png"></th>
+          <th><img src="img/mana_b.png"></th>
+          <th><img src="img/mana_r.png"></th>
+          <th><img src="img/mana_g.png"></th>
         </tr>
       </thead>
       <tbody>
@@ -20,40 +28,30 @@
             <select id="w1">
               <option value="0">0</option>
               <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
             </select>
           </td>
           <td>
             <select id="u1">
               <option value="0">0</option>
               <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
             </select>
           </td>
           <td>
             <select id="b1">
               <option value="0">0</option>
               <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
             </select>
           </td>
           <td>
             <select id="r1">
               <option value="0">0</option>
               <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
             </select>
           </td>
           <td>
             <select id="g1">
               <option value="0">0</option>
               <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
             </select>
           </td>
         </tr>
@@ -63,7 +61,6 @@
               <option value="0">0</option>
               <option value="1">1</option>
               <option value="2">2</option>
-              <option value="3">3</option>
             </select>
           </td>
           <td>
@@ -71,7 +68,6 @@
               <option value="0">0</option>
               <option value="1">1</option>
               <option value="2">2</option>
-              <option value="3">3</option>
             </select>
           </td>
           <td>
@@ -79,7 +75,6 @@
               <option value="0">0</option>
               <option value="1">1</option>
               <option value="2">2</option>
-              <option value="3">3</option>
             </select>
           </td>
           <td>
@@ -87,7 +82,6 @@
               <option value="0">0</option>
               <option value="1">1</option>
               <option value="2">2</option>
-              <option value="3">3</option>
             </select>
           </td>
           <td>
@@ -95,7 +89,6 @@
               <option value="0">0</option>
               <option value="1">1</option>
               <option value="2">2</option>
-              <option value="3">3</option>
             </select>
           </td>
         </tr>
@@ -227,10 +220,18 @@
         </tr>
       </tbody>
     </table>
-    <table>
+  </div>
+    <div>
+    <h2>特種地形の枚数</h2>
+    <table class="land">
       <thead>
         <tr>
-          <th>色</th><th>W</th><th>U</th><th>B</th><th>R</th><th>G</th>
+          <th>色</th>
+          <th><img src="img/mana_w.png"></th>
+          <th><img src="img/mana_u.png"></th>
+          <th><img src="img/mana_b.png"></th>
+          <th><img src="img/mana_r.png"></th>
+          <th><img src="img/mana_g.png"></th>
         </tr>
       </thead>
       <tbody>
@@ -279,13 +280,36 @@
         </tr>
       </tbody>
     </table>
-    <b>入れたい基本土地枚数</b><input type="text" style="width:48px;" id="basiclands">枚<br>
-    <button onclick="calcLands()">計算する</button><br>
-    平地：<output id="ansW"></output>
-    島：<output id="ansU"></output>
-    沼：<output id="ansB"></output>
-    山：<output id="ansR"></output>
-    森：<output id="ansG"></output>
+  </div>
+    <div>
+    <h2>入れたい基本土地枚数</h2>
+    <input type="text" id="basiclands">枚<br>
+    
+    </div>
+    </div>
+    <div class="calcwrapper">
+      <button onclick="calcLands()">計算する</button>
+      <div class="output">
+        平地：<output id="ansW"></output>
+        島：<output id="ansU"></output>
+        沼：<output id="ansB"></output>
+        山：<output id="ansR"></output>
+        森：<output id="ansG"></output>
+      </div>
+    </div>
+
+    <h2>使い方</h2>
+    <p class="howto">(1)色とマナ総量の合致したところにシンボル数を入力してください(例：1WWの《栄光の頌歌》をデッキに入れる場合は、3マナ出るときにWWが欲しいので、Wの列の3の行のところに「2」を入力します)。同じマナ総量・シンボル数のカードがある場合は最大値を入力してください。<br>
+      (2)特種地形から出る色を全て入力してください(例：赤と青が出る《蒸気孔》を1枚ピックしていたら、UとRの行にそれぞれ1を入力してください)。<br>
+      (3)デッキに入れたい基本土地の枚数を入力してください。<br>
+      (4)全ての入力が終わったら、「計算する」を押してください。</p>
+    
+    <div class="cf">
+      参考<br>
+      <a target="_blank" href="https://mtgcoon.com/probability-land-manacurve-manabase/">確率から考える土地枚数とマナカーブとマナベース|MTG Coon</a><br>
+      <a target="_blank" href="https://article.hareruyamtg.com/article/article_2756/">超簡単にマナベース計算できちゃう早見表を作ってみた | 【晴れる屋】</a>
+    </div>
+    </div>
 
     <script>
       function calcLands(){
