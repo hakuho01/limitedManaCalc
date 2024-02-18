@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+  <head></head>
+  <body>
+    <h1>リミテで基本土地枚数計算するやつ</h1>
+    <h2>使い方</h2>
+    <p>(1)色とマナ総量の合致したところにシンボル数を入力してください(例：1WWの《栄光の頌歌》をデッキに入れる場合は、3マナ出るときにWWが欲しいので、Wの列の3の行のところに「2」を入力します)。同じマナ総量・シンボル数のカードがある場合は最大値を入力してください。<br>
+      (2)特種地形から出る色を全て入力してください(例：赤と青が出る《蒸気孔》を1枚ピックしていたら、UとRの行にそれぞれ1を入力してください)。<br>
+      (3)デッキに入れたい基本土地の枚数を入力してください。<br>
+      (4)全ての入力が終わったら、「計算する」を押してください。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>色</th><th>W</th><th>U</th><th>B</th><th>R</th><th>G</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>
+            <select id="w1">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="u1">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="b1">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="r1">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="g1">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>2</th><td>
+            <select id="w2">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="u2">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="b2">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="r2">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="g2">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>3</th><td>
+            <select id="w3">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="u3">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="b3">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="r3">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="g3">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>4</th><td>
+            <select id="w4">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="u4">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="b4">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="r4">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="g4">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>5</th><td>
+            <select id="w5">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="u5">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="b5">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="r5">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="g5">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <tr>
+          <th>色</th><th>W</th><th>U</th><th>B</th><th>R</th><th>G</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>特殊地形</th>
+          <td>
+            <select id="spw">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="spu">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="spb">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="spr">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+          <td>
+            <select id="spg">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <b>入れたい基本土地枚数</b><input type="text" style="width:48px;" id="basiclands">枚<br>
+    <button onclick="calcLands()">計算する</button><br>
+    平地：<output id="ansW"></output>
+    島：<output id="ansU"></output>
+    沼：<output id="ansB"></output>
+    山：<output id="ansR"></output>
+    森：<output id="ansG"></output>
+
+    <script>
+      function calcLands(){
+        // マナ要求量を変数に代入
+        let w1 = document.getElementById("w1").value
+        let w2 = document.getElementById("w2").value
+        let w3 = document.getElementById("w3").value
+        let w4 = document.getElementById("w4").value
+        let w5 = document.getElementById("w5").value
+
+        let u1 = document.getElementById("u1").value
+        let u2 = document.getElementById("u2").value
+        let u3 = document.getElementById("u3").value
+        let u4 = document.getElementById("u4").value
+        let u5 = document.getElementById("u5").value
+
+        let b1 = document.getElementById("b1").value
+        let b2 = document.getElementById("b2").value
+        let b3 = document.getElementById("b3").value
+        let b4 = document.getElementById("b4").value
+        let b5 = document.getElementById("b5").value
+
+        let r1 = document.getElementById("r1").value
+        let r2 = document.getElementById("r2").value
+        let r3 = document.getElementById("r3").value
+        let r4 = document.getElementById("r4").value
+        let r5 = document.getElementById("r5").value
+
+        let g1 = document.getElementById("g1").value
+        let g2 = document.getElementById("g2").value
+        let g3 = document.getElementById("g3").value
+        let g4 = document.getElementById("g4").value
+        let g5 = document.getElementById("g5").value
+
+        // 表に従って要求値を計算
+
+        // 初期値
+        let requiredW = 0
+        let requiredU = 0
+        let requiredB = 0
+        let requiredR = 0
+        let requiredG = 0
+
+        let specialLands = {
+          spW: document.getElementById("spw").value,
+          spU: document.getElementById("spu").value,
+          spB: document.getElementById("spb").value,
+          spR: document.getElementById("spr").value,
+          spG: document.getElementById("spg").value
+        }
+
+        // 表
+        const manaArray = [
+          [10,0,0],
+          [9,14,0],
+          [8,12,15],
+          [7,11,14],
+          [6,10,13]
+        ]
+
+        // 白の計算
+        let w1req = w1 != 0 ? manaArray[0][(w1 - 1)] : 0
+        let w2req = w2 != 0 ? manaArray[1][(w2 - 1)] : 0
+        let w3req = w3 != 0 ? manaArray[2][(w3 - 1)] : 0
+        let w4req = w4 != 0 ? manaArray[3][(w4 - 1)] : 0
+        let w5req = w5 != 0 ? manaArray[4][(w5 - 1)] : 0
+        requiredW = Math.max(w1req,w2req,w3req,w4req,w5req) - specialLands['spW']
+
+        // 青の計算
+        let u1req = u1 != 0 ? manaArray[0][(u1 - 1)] : 0
+        let u2req = u2 != 0 ? manaArray[1][(u2 - 1)] : 0
+        let u3req = u3 != 0 ? manaArray[2][(u3 - 1)] : 0
+        let u4req = u4 != 0 ? manaArray[3][(u4 - 1)] : 0
+        let u5req = u5 != 0 ? manaArray[4][(u5 - 1)] : 0
+        requiredU = Math.max(u1req,u2req,u3req,u4req,u5req) - specialLands['spU']
+
+        // 黒の計算
+        let b1req = b1 != 0 ? manaArray[0][(b1 - 1)] : 0
+        let b2req = b2 != 0 ? manaArray[1][(b2 - 1)] : 0
+        let b3req = b3 != 0 ? manaArray[2][(b3 - 1)] : 0
+        let b4req = b4 != 0 ? manaArray[3][(b4 - 1)] : 0
+        let b5req = b5 != 0 ? manaArray[4][(b5 - 1)] : 0
+        requiredB = Math.max(b1req,b2req,b3req,b4req,b5req) - specialLands['spB']
+
+        // 赤の計算
+        let r1req = r1 != 0 ? manaArray[0][(r1 - 1)] : 0
+        let r2req = r2 != 0 ? manaArray[1][(r2 - 1)] : 0
+        let r3req = r3 != 0 ? manaArray[2][(r3 - 1)] : 0
+        let r4req = r4 != 0 ? manaArray[3][(r4 - 1)] : 0
+        let r5req = r5 != 0 ? manaArray[4][(r5 - 1)] : 0
+        requiredR = Math.max(r1req,r2req,r3req,r4req,r5req) - specialLands['spR']
+
+        // 緑の計算
+        let g1req = g1 != 0 ? manaArray[0][(g1 - 1)] : 0
+        let g2req = g2 != 0 ? manaArray[1][(g2 - 1)] : 0
+        let g3req = g3 != 0 ? manaArray[2][(g3 - 1)] : 0
+        let g4req = g4 != 0 ? manaArray[3][(g4 - 1)] : 0
+        let g5req = g5 != 0 ? manaArray[4][(g5 - 1)] : 0
+        requiredG = Math.max(g1req,g2req,g3req,g4req,g5req) - specialLands['spG']
+
+        let basiclands = parseInt(document.getElementById("basiclands").value)
+        let totalRequired = requiredW + requiredU + requiredB + requiredR + requiredG
+
+        let calc = {W:0, U:0, B:0, R:0, G:0}
+        if ( basiclands != totalRequired){ // 入れたい枚数と必要枚数が一致していない場合
+          calc['W'] = Math.floor(basiclands * requiredW / totalRequired)
+          calc['U'] = Math.floor(basiclands * requiredU / totalRequired)
+          calc['B'] = Math.floor(basiclands * requiredB / totalRequired)
+          calc['R'] = Math.floor(basiclands * requiredR / totalRequired)
+          calc['G'] = Math.floor(basiclands * requiredG / totalRequired)
+          if ( basiclands != calc['W'] + calc['U'] + calc['B'] + calc['R'] + calc['G']){
+            let restlands = basiclands - (calc['W'] + calc['U'] + calc['B'] + calc['R'] + calc['G']) 
+            let fewW = calc['W'] - (basiclands * requiredW / totalRequired)
+            let fewU = calc['U'] - (basiclands * requiredU / totalRequired)
+            let fewB = calc['B'] - (basiclands * requiredB / totalRequired)
+            let fewR = calc['R'] - (basiclands * requiredR / totalRequired)
+            let fewG = calc['G'] - (basiclands * requiredG / totalRequired)
+            let arr = [
+              {name: 'W', num: fewW},
+              {name: 'U', num: fewU},
+              {name: 'B', num: fewB},
+              {name: 'R', num: fewR},
+              {name: 'G', num: fewG},
+            ]
+            let result = arr.sort(function(a, b) {
+              return (a.num < b.num) ? -1 : 1;  //オブジェクトの昇順ソート
+            });
+            let color =''
+            for (let i = 0; i < restlands; i++){
+              color = result[i]['name']
+              calc[color] = calc[color] + 1
+            }            
+          }
+        } else { // 一致している場合
+          calc['W'] = requiredW
+          calc['U'] = requiredU
+          calc['B'] = requiredB
+          calc['R'] = requiredR
+          calc['G'] = requiredG
+        }
+
+        ansW.value = calc['W']
+        ansU.value = calc['U']
+        ansB.value = calc['B']
+        ansR.value = calc['R']
+        ansG.value = calc['G']
+      }
+    </script>
+  </body>
+</html>
